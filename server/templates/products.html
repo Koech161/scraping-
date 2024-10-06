@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapped Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Scrapped Products</h1>
+    <div class="product-container">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="{{ product.img_src }}" alt="{{ product.title }}" />
+            <h2>{{ product.title }}</h2>
+            <p>Price: {{ product.price }}</p>
+            <button>Add To Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
